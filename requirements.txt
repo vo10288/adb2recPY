@@ -1,0 +1,9 @@
+datetime
+os
+Tkinter
+sys
+subprocess
+signal
+time
+googletrans
+socket
