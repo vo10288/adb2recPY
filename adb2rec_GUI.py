@@ -272,7 +272,7 @@ root.geometry("360x630")
 
 
 	
-label = tk.Label(text=".          ADB SCREENSHOT SCREENRECORD",
+label = tk.Label(text=".          Screen Shot       -       Screen Record",
 				fg="red",
 				font=("helvetica",12),
 				
@@ -285,7 +285,7 @@ button = tk.Button(frame,
                    fg="#ffffff",
                    bg="#000000",
                    command=quit)
-button.pack(ipadx=122, ipady=4, pady=25)
+button.pack(ipadx=128, ipady=4, pady=25)
 
 
 #ok
@@ -294,14 +294,14 @@ slogan = tk.Button(frame,
                    fg="#ffffff",
                    bg="#ff0000",
                    command=install_requirements)
-slogan.pack(ipadx=50, ipady=4, pady=1)
+slogan.pack(ipadx=60, ipady=4, pady=1)
 #ok
 slogan = tk.Button(frame,
-                   text="HELP ME",
+                   text="HELP",
                    fg="#ffffff",
                    bg="#ff0000",
                    command=helpme)
-slogan.pack(ipadx=102, ipady=4, pady=1)
+slogan.pack(ipadx=124, ipady=4, pady=1)
 
 #ok
 slogan = tk.Button(frame,
@@ -309,7 +309,7 @@ slogan = tk.Button(frame,
                    fg="#ffffff",
                    bg="#0000ff",
                    command=adb_connect_cable)
-slogan.pack(ipadx=1, ipady=4, pady=1)
+slogan.pack(ipadx=10, ipady=4, pady=1)
 
 #ok
 slogan = tk.Button(frame,
@@ -317,7 +317,7 @@ slogan = tk.Button(frame,
                    fg="#ffffff",
                    bg="#0000ff",
                    command=adb_connect_ip_wifi)
-slogan.pack(ipadx=1, ipady=4, pady=1)
+slogan.pack(ipadx=10, ipady=4, pady=1)
 
 #ok
 slogan = tk.Button(frame,
@@ -325,35 +325,35 @@ slogan = tk.Button(frame,
                    fg="#0000ff",
                    bg="#00ff00",
                    command=screenshot)
-slogan.pack(ipadx=86, ipady=4, pady=1)
+slogan.pack(ipadx=94, ipady=4, pady=1)
 #ok
 slogan = tk.Button(frame,
                    text="KILL SCREEN SHOT",
                    fg="#ffffff",
                    bg="#000000",
                    command=killscreenshot)
-slogan.pack(ipadx=71, ipady=4, pady=1)
+slogan.pack(ipadx=79, ipady=4, pady=1)
 #ok
 slogan = tk.Button(frame,
                    text="SCREEN RECORD",
                    fg="#0000ff",
                    bg="#00ff00",
                    command=screenrecord)
-slogan.pack(ipadx=76, ipady=4, pady=1)
+slogan.pack(ipadx=84, ipady=4, pady=1)
 #ok
 slogan = tk.Button(frame,
                    text="KILL SCREEN RECORD",
                    fg="#ffffff",
                    bg="#000000",
                    command=killscreenrecord)
-slogan.pack(ipadx=59, ipady=4, pady=1)
+slogan.pack(ipadx=68, ipady=4, pady=1)
 #ok
 slogan = tk.Button(frame,
                    text="COMPRESS AND MAKE HASH TO ALL",
                    fg="#0000ff",
                    bg="#00ff00",
                    command=compressandhash)
-slogan.pack(ipadx=11, ipady=4, pady=1)
+slogan.pack(ipadx=19, ipady=4, pady=1)#ipadx=11
 #ok
 slogan = tk.Button(frame,
                    text="CREATE STRUCTURE DIRECTORY FOR OCR",
@@ -371,8 +371,8 @@ slogan.pack(ipadx=100, ipady=4, pady=1)
 
 slogan = tk.Button(frame,
                    text="TRANSLATE FROM ALL LANGS TO ENGLISH",
-                   fg="#ffffff",
-                   bg="#0000ff",
+                   fg="#000000",
+                   bg="#ffcb05",
                    command=translateinenglish)
 slogan.pack(ipadx=1, ipady=4, pady=1)
 
