@@ -1,9 +1,12 @@
 datetime
 os
 Tkinter
+Tkconstants
+tkFileDialog
 sys
 subprocess
 signal
 time
 googletrans
 socket
+ppadb
