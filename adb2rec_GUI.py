@@ -37,14 +37,23 @@ from googletrans import Translator
 import subprocess
 import socket
 
+if not os.path.exists('screenshot'):
+		os.makedirs('screenshot')
+if not os.path.exists('screenrecord'):
+		os.makedirs('screenrecord')
+if not os.path.exists('compressfiles'):
+		os.makedirs('compressfiles')
+if not os.path.exists('hashfiles'):
+		os.makedirs('hashfiles')
+			
 translator =  Translator()
 ###interrupt all def or while cicle with CTRL-C
 
-def signal_handler(signal, frame):
-    print("\nprogram exiting gracefully")
-    sys.exit(0)
+#def signal_handler(signal, frame):
+#    print("\nprogram exiting gracefully")
+#    sys.exit(0)
 
-signal.signal(signal.SIGINT, signal_handler)
+#signal.signal(signal.SIGINT, signal_handler)
 
 #os.chdir(os.path.expanduser('~'))
 #ok
@@ -133,7 +142,7 @@ def adb_connect_ip_wifi():
 	#command = ('read ip')
 	#subprocess.Popen(command, shell=True)
 	#time.sleep(3.0)
-	ip = input('Insert private IP of your Mobile Phone : ')
+	ip = input('Insert private IP of your Mobile Phone, like this \'192.168.43.1\' : ')
 	try:
 		socket.inet_aton(ip)
 		print("Valid IP")
@@ -245,7 +254,7 @@ def directoryocr():
 	if not os.path.exists('04.video2ocr/04.ocr_output'):
 			os.makedirs('04.video2ocr/04.ocr_output')			
 def video2ocrcolor():
-	lang = input('Insert language, example eng ita ara : ')
+	lang = input('Insert language, example \"eng\" \"ita\" \"ara\" : ')
 	command =('chmod 755 video2ocrColor')
 	subprocess.Popen(command, shell=True)
 	command =('./video2ocrColor '+lang)
