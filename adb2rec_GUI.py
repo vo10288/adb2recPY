@@ -1,4 +1,6 @@
 #!/usr/bin/python2
+# V. 0.3 Beta
+#20191129 h. 20.43
 
 # by Antonio "Visi@n" Broi broi.antonio@gmail.com
 # http://www.broi.it aNTbRO
@@ -170,12 +172,33 @@ def screenshot():
 	subprocess.Popen(command, shell=True)
 	command = ('./screenshot.sh')
 	subprocess.Popen(command, shell=True)
+#ok	
+def screenshot_up():
+	global screenshot
+	if not os.path.exists('screenshot'):
+			os.makedirs('screenshot')	
+	command = ('chmod 755 screenshot.sh')
+	subprocess.Popen(command, shell=True)
+	command = ('./screenshot_up.sh')
+	subprocess.Popen(command, shell=True)
+#ok	
+def screenshot_down():
+	global screenshot
+	if not os.path.exists('screenshot'):
+			os.makedirs('screenshot')	
+	command = ('chmod 755 screenshot.sh')
+	subprocess.Popen(command, shell=True)
+	command = ('./screenshot_down.sh')
+	subprocess.Popen(command, shell=True)		
 #ok
 def killscreenshot():
 	global killscreenshot
 	command = "kill `ps aux | grep 'screenshot.sh'|awk '{print $2}'`"
 	subprocess.Popen(command, shell=True)	
-
+	command = "kill `ps aux | grep 'screenshot_up.sh'|awk '{print $2}'`"
+	subprocess.Popen(command, shell=True)	
+	command = "kill `ps aux | grep 'screenshot_down.sh'|awk '{print $2}'`"
+	subprocess.Popen(command, shell=True)		
 #ok	
 def screenrecord():
 	global screenrecord
@@ -258,8 +281,11 @@ def translateinenglish():
 	try:
 		while True:
 		
-			sentence = str(input('enter a sentence with \" example \"Ciao\": '))
+			#sentence = str(input('enter a sentence with \" example \"Ciao\": '))
+			#sentence1 = str(sentence)
+			sentence = raw_input('insert the phrase \n xxx to exit: ')
 			sentence1 = str(sentence)
+			
 			rigatrans = translator.translate(sentence, dest="en")
 			print(rigatrans)
 
@@ -270,7 +296,7 @@ root = tk.Tk()
 frame = tk.Frame(root)
 frame.pack()
 root.wm_title("adb2rec")
-root.geometry("360x630")
+root.geometry("360x690")
 
 
 	
@@ -328,6 +354,23 @@ slogan = tk.Button(frame,
                    bg="#00ff00",
                    command=screenshot)
 slogan.pack(ipadx=94, ipady=4, pady=1)
+
+
+#ok
+slogan = tk.Button(frame,
+                   text="SCREEN SHOT UP",
+                   fg="#0000ff",
+                   bg="#00ff00",
+                   command=screenshot_up)
+slogan.pack(ipadx=84, ipady=4, pady=1)
+
+#ok
+slogan = tk.Button(frame,
+                   text="SCREEN SHOT_down",
+                   fg="#0000ff",
+                   bg="#00ff00",
+                   command=screenshot_down)
+slogan.pack(ipadx=74, ipady=4, pady=1)
 #ok
 slogan = tk.Button(frame,
                    text="KILL SCREEN SHOT",
@@ -384,6 +427,6 @@ label = tk.Label(text="Visi@n",
 				
 					)
 label.pack(ipadx=15, ipady=4, pady=15, padx=10)
-label.place(x=280, y=590)
+label.place(x=280, y=660)
 
 root.mainloop()
