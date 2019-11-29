@@ -1,6 +1,6 @@
 #!/usr/bin/python2
 # V. 0.3 Beta
-#20191129 h. 23.50
+#20191129 h. 20.43
 
 # by Antonio "Visi@n" Broi broi.antonio@gmail.com
 # http://www.broi.it aNTbRO
@@ -474,7 +474,7 @@ root.geometry("360x690")
 
 
 	
-label = tk.Label(text=".          Screen Shot       -       Screen Record",
+label = tk.Label(text="ScreenShot ScreenRecord O.C.R. TRANSLATE",
 				fg="red",
 				font=("helvetica",12),
 				
@@ -589,7 +589,7 @@ slogan = tk.Button(frame,
 slogan.pack(ipadx=100, ipady=4, pady=1)
 
 slogan = tk.Button(frame,
-                   text="TRANSLATE FROM ALL LANGS TO ENGLISH",
+                   text="TRANSLATE FROM * LANGS TO EN FR IT ES",
                    fg="#000000",
                    bg="#ffcb05",
                    command=translateinenglish)
