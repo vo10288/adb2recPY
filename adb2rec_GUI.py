@@ -1,6 +1,6 @@
 #!/usr/bin/python2
 # V. 0.3 Beta
-#20191129 h. 20.43
+#20191129 h. 23.50
 
 # by Antonio "Visi@n" Broi broi.antonio@gmail.com
 # http://www.broi.it aNTbRO
