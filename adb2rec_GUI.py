@@ -26,7 +26,6 @@ import os
 import subprocess
 import sys, signal
 import time
-from ppadb import *
 import googletrans
 from googletrans import Translator
 import subprocess
