@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# video2ocrColor 20191029 h.18.33
+# video2ocrColor 20191130 h.03.00
 # OCR extraction from video files like mov,mp4,m4a,3gp,3g2,mj2
 
 # THIS SCRIPT IS CREATED BY Antonio 'Visi@n' Broi antonio@tsurugi-linux.org & Giovanni 'Sug4r' Rattaro and is released under Gnu-Linux GPL Open Source License
@@ -22,73 +22,6 @@
 # with this program; if not, write to the Free Software Foundation, Inc.,
 # 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 
-cd
-			
-if [ -d 02.computer_vision ];
-   	then 
-	echo "the directory 02.computer_vision exists";
-		
-else
-	echo "the directory 02.computer_vision does not exist, will be created";
-	
-	mkdir 02.computer_vision
-fi
-
-if [ -d 02.computer_vision/04.video2ocr ];
-   	then 
-	echo "the directory 02.computer_vision exists";
-		
-else
-	echo "the directory 02.computer_vision does not exist, will be created";
-	
-	mkdir 02.computer_vision/04.video2ocr
-fi
-
-if [ -d 02.computer_vision/04.video2ocr/01.video ];
-   	then 
-	echo "the directory 01.video exists";
-		
-else
-	echo "the directory 01.video does not exist, will be created";
-	
-	mkdir 02.computer_vision/04.video2ocr/01.video
-fi
-
-
-			
-if [ -d 02.computer_vision/04.video2ocr/02.images ];
-   	then 
-	echo "the directory 02.images esiste";
-		
-else
-	echo "the directory 02.images does not exist, will be created";
-	
-	mkdir 02.computer_vision/04.video2ocr/02.images
-fi
-			
-if [ -d 02.computer_vision/04.video2ocr/03.imagesgrey ];
-   	then 
-	echo "the directory 03.imagesgrey esiste";
-		
-else
-	echo "the directory 03.imagesgrey does not exist, will be created";
-	
-	mkdir 02.computer_vision/04.video2ocr/03.imagesgrey
-fi
-			
-if [ -d 02.computer_vision/04.video2ocr/04.ocr_output ];
-   	then 
-	echo "the directory 04.ocr_output esiste";
-		
-else
-	echo "la directory 04.ocr_output does not exist, will be created";
-	mkdir 02.computer_vision/04.video2ocr/04.ocr_output
-fi
-			
-echo "O.C.R. STRUCTURE IN $HOME CREATED NOW COPY FILES VIDEO IN $HOME/02.computer_vision/01.VIDEO or image files in $ HOME/02.computer_vision/02.images"
-
-
-
 check_root () {
         #check if root user
         if [ "$(id -u)" == "0" ]; then
@@ -97,12 +30,24 @@ check_root () {
         fi
 }
 
+make_working_directory () {
+	WORKING_DIRECTORY="$HOME/02.computer_vision/04.video2ocr"
+
+	for DIRECTORY in "$WORKING_DIRECTORY"/01.video "$WORKING_DIRECTORY"/02.images "$WORKING_DIRECTORY"/03.imagesgrey "$WORKING_DIRECTORY"/04.ocr_output; do
+		if [ !  -d "$DIRECTORY" ]; then
+			echo "The working directory \""$DIRECTORY"\" doesn't exist and it will be created" && mkdir -p "$DIRECTORY"
+		fi
+	done
+				
+	echo -e "O.C.R. directory tree has been created inside \""$HOME"\" \n Now it's possible to copy viddeo files in \""$HOME"/02.computer_vision/01.VIDEO\" or image files inside \""$HOME"/02.computer_vision/02.images\""
+}
+
 input_check () {
 WORKING_DIRECTORY="$HOME/02.computer_vision/04.video2ocr"
 CV_DIRECTORIES="01.video 02.images 03.imagesgrey 04.ocr_output"
 
 help="
-Copy your video files inside the '$WORKING_DIRECTORY/01.video' directory and run the script.
+Copy your video files inside the "$WORKING_DIRECTORY/01.video" directory and run the script.
 When the process will end a detailed report with results will be displayed in html format.
 
       --help        display this help and exit
@@ -125,7 +70,7 @@ This is free software.  You may redistribute copies of it under the terms of
 the GNU General Public License <http://www.gnu.org/licenses/gpl.html>.
 There is NO WARRANTY, to the extent permitted by law.
 
-Written by Antonio 'Visi@n' Broi & Giovanni 'Sug4r' Rattaro"
+Written by Antonio 'Visi@n' Broi && Giovanni 'Sug4r' Rattaro"
 
 langs="afr
 amh
@@ -346,12 +291,12 @@ html_report () {
 	echo -e '#########################################\n'
 
 	firefox -new-tab "$WORKING_DIRECTORY"/index_"$1"_color.html 2>/dev/null &
-	
 }
 
 
 ## MAIN ##
 check_root
+make_working_directory
 input_check "$1" "$2"
 video2png "$1"
 #image_grey_scale "$1"

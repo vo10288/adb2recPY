@@ -1,9 +1,9 @@
 #!/bin/bash
  
-echo "you chose Screenshot"
+echo "you chose Screenrecord"
 echo "press ctrl-c to interrrupt" 
 screenrecord=$(date +%Y%m%d%H%M%S)
-
+#WORKING_DIRECTORY="$HOME/02.computer_vision/04.video2ocr"
 
 if [ -d screenrecord ];
 	then 
