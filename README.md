@@ -1,6 +1,6 @@
 # adb2recPY
-ADB SCREE NSHOT - SCREEN RECORD - TGZ - HASH - O.C.R. - TRANSLATE
-One simple tool for Python 2.7 and graphical interface GUI TKINTER
+ADB SCREENSHOT - SCREEN RECORD - TGZ - HASH -
+One simple tool for Python 3 and graphical interface GUI TKINTER
 You can make much screenshot *.png or screenrecord *.mp4 from cable or wifi connected to your
 Mobile Phone, and after compress and to applicate HASH.
 Also you can copy some or ALL video or images in $home/02.computer_vision/04.video._ocr/01.video and click to VIDEO2OCR and stand by the end of the work.
